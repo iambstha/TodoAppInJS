@@ -11,14 +11,16 @@
 
 <body>
     <div class="form">
+        <h2>Task Manager</h2>
         <form >
             <input type="text" name="enetr-text" id="enter-text" placeholder="Enter something...">
-            <input type="submit" value="Add to my todo" id="submit-btn">
+            <input type="submit" value="Add Task" id="submit-btn">
         </form>
+        <div class="todo-display">
+            <ol id="todo-list" class="ol-list"></ol>
+        </div>
     </div>
-    <div class="todo-display">
-        <ol id="todo-list" class="ol-list"></ol>
-    </div>
+
     <script src="main.js"></script>
 </body>
 
