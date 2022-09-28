@@ -3,7 +3,8 @@ let text = document.getElementById('enter-text');
 
 let submit = document.getElementById('submit-btn')
 let arr = [];
-submit.onclick = () => {
+submit.onclick = (e) => {
+    e.preventDefault();
     if (text.value == '') {
 
     } else {

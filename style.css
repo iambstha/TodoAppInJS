@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 20px;
+}
+.ol-list{
+    margin: 10px 0;
+    border: 1px solid #cfcfcf;
+    background-color: #ebebeb;
+    padding: 30px;
+}
+.ol-list li{
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid red;
+}
+.ol-list li button{
+    float: right;
+}
