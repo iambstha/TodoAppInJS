@@ -2,22 +2,34 @@ let text = document.getElementById('enter-text');
 
 
 let submit = document.getElementById('submit-btn')
-let arr = ["Hi"];
+let arr = [];
 submit.onclick = () => {
-    if(text.value == ''){
+    if (text.value == '') {
 
-    }else{
+    } else {
         arr.push(text.value)
         console.log(arr)
-    
-        let list = document.getElementById('todo-list');
-        let li = document.createElement('li');
-        let span = document.createElement('button');
-        li.appendChild(document.createTextNode(arr[arr.length - 1]))
-        span.appendChild(document.createTextNode("Remove"))
-        list.appendChild(li)
-        li.appendChild(span);
-        text.value = ''
-    }
 
+        let li = document.createElement('li');
+        li.appendChild(document.createTextNode(arr[arr.length - 1]))
+        let list = document.getElementById('todo-list');
+        list.appendChild(li)
+
+        let remove = document.createElement('button');
+        remove.appendChild(document.createTextNode("Remove"))
+        li.appendChild(remove);
+
+
+        remove.setAttribute('class', 'btn')
+        text.value = ''
+        let btn = document.querySelectorAll('.btn')
+        console.log(btn)
+        btn[btn.length - 1].onclick = (e) => {
+            console.log(btn[btn.length - 1].parentElement)
+            let r = btn[btn.length - 1].parentElement;
+            r.remove();
+
+        }
+    }
 }
+
