@@ -18,12 +18,23 @@ function makeList() {
     li.appendChild(document.createTextNode(arr[arr.length - 1]))
     let list = document.getElementById('todo-list');
     list.appendChild(li)
+    li.setAttribute('completed',"false")
+
+    li.addEventListener('click',(e) => {
+        if(e.target.getAttribute('completed') == "false"){
+            li.style.textDecoration = 'line-through';
+            e.target.setAttribute('completed',"true");
+        }else{
+            li.style.textDecoration = 'none';
+            e.target.setAttribute('completed',"false");
+        }
+    })
 
     let CLOSE = document.createElement('button');
     CLOSE.appendChild(document.createTextNode("X"))
     li.appendChild(CLOSE);
     CLOSE.setAttribute('class', 'btn')
-    
+
     deleteFromList();
 }
 
@@ -36,3 +47,6 @@ function deleteFromList(){
     }
 }
 
+function completed(){
+    
+}
