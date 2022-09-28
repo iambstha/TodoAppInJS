@@ -51,9 +51,11 @@ function completed(li) {
     li.addEventListener('click', (e) => {
         if (e.target.getAttribute('completed') == "false") {
             li.style.textDecoration = 'line-through';
+            li.setAttribute('class','completed')
             e.target.setAttribute('completed', "true");
         } else {
             li.style.textDecoration = 'none';
+            li.setAttribute('class','not-completed')
             e.target.setAttribute('completed', "false");
         }
     })

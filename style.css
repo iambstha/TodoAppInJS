@@ -6,6 +6,16 @@
 body{
     padding: 20px;
 }
+.ol-list li{
+    position: relative;
+}
+.ol-list li:before {
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    content: "•";
+  }
 .ol-list{
     margin: 10px 0;
     border: 1px solid #cfcfcf;
@@ -13,11 +23,26 @@ body{
     padding: 30px;
 }
 .ol-list li{
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    list-style: decimal;
     padding: 10px;
-    border: 1px solid red;
+    font-size: 1.2rem;
+}
+.ol-list li:hover{
+    background-color: #d6d3d3;
 }
 .ol-list li button{
-    float: right;
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: #000;
+    color: #fff;
+}
+
+.completed{
+    background-color: rgb(216, 223, 159);
+}
+.not-completed{
+    background-color: #ebebeb;
 }
