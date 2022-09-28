@@ -3,34 +3,41 @@ let submit = document.getElementById('submit-btn')
 let arr = [];
 
 submit.onclick = (e) => {
+    //Prevents the browser to refresh everytime a form is submitted 
     e.preventDefault();
     if (text.value == '') {
+        //Check whether something is typed in the input field or not
         console.log("Enter something!")
     } else {
+        //Pushing the newly added task in the array
         arr.push(text.value)
+        // Calliing the function for generating the list
         makeList();
+        // Clearing the value property in the input field
         text.value = ''
     }
 }
 
 function makeList() {
+    //Generarting a list
     let li = document.createElement('li');
     li.appendChild(document.createTextNode(arr[arr.length - 1]))
     let list = document.getElementById('todo-list');
     list.appendChild(li)
-    li.setAttribute('completed',"false")
-
-    
+    li.setAttribute('completed', "false")
+    // A close button for deleting item from the list
     let CLOSE = document.createElement('button');
     CLOSE.appendChild(document.createTextNode("X"))
     li.appendChild(CLOSE);
     CLOSE.setAttribute('class', 'btn')
-
+    //A function for deleting item from the list
     deleteFromList();
+    //A function for checking and unchecking the completed status of the task
     completed(li);
 }
 
-function deleteFromList(){
+//A function for deleting items from the list
+function deleteFromList() {
     let btn = document.querySelectorAll('.btn')
     btn[btn.length - 1].onclick = (e) => {
         let r = btn[btn.length - 1].parentElement;
@@ -39,14 +46,15 @@ function deleteFromList(){
     }
 }
 
-function completed(li){
-    li.addEventListener('click',(e) => {
-        if(e.target.getAttribute('completed') == "false"){
+//A function for checking the status of the task - completed or not completed
+function completed(li) {
+    li.addEventListener('click', (e) => {
+        if (e.target.getAttribute('completed') == "false") {
             li.style.textDecoration = 'line-through';
-            e.target.setAttribute('completed',"true");
-        }else{
+            e.target.setAttribute('completed', "true");
+        } else {
             li.style.textDecoration = 'none';
-            e.target.setAttribute('completed',"false");
+            e.target.setAttribute('completed', "false");
         }
     })
 }
