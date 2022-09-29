@@ -19,9 +19,13 @@ submit.onclick = (e) => {
 }
 
 function makeList() {
+    let time = new Date().toLocaleTimeString();
     //Generarting a list
     let li = document.createElement('li');
     li.appendChild(document.createTextNode(arr[arr.length - 1]))
+    let timeStamp = document.createElement('span');
+    timeStamp.appendChild(document.createTextNode(time));
+    li.appendChild(timeStamp);
     let list = document.getElementById('todo-list');
     list.appendChild(li)
     li.setAttribute('completed', "false")

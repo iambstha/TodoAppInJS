@@ -71,7 +71,8 @@ input[type='submit']{
     padding: 30px;
 }
 .ol-list li{
-    display: flex;
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr;
     justify-content: space-between;
     align-items: center;
     list-style: decimal;
